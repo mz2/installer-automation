@@ -18,7 +18,8 @@ if [ -z "${SIKULIX_JAR}" ]; then
 fi 
 
 mkdir -p vm
-quickemu --vm kinetic.conf &
+sleep 1
+quickemu --vm kinetic.conf
 
 clean() {
   EXIT_CODE=$?
