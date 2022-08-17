@@ -32,3 +32,5 @@ trap clean EXIT
 
 java -jar $SIKULIX_JAR -r installer-automation.sikuli
 
+set +e +pipefail
+killall qemu-system-x86_64 || /bin/true

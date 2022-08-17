@@ -6,4 +6,6 @@
 
 ## Running instructions
 
-./install-kinetic.sh
+```bash
+SIKULIX_JAR=$HOME/java/lib/sikulixide.jar ./bin/install-kinetic.sh
+```
