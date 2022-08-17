@@ -1,0 +1,33 @@
+#!/bin/bash
+
+set -e pipefail
+
+if [ -f ./vm/kinetic.qcow2 ]; then
+  echo "kinetic VM already exists at ./vm/kinetic.qcow2. Remove it and try again."
+  exit 1
+fi
+
+if [ ! -f ./kinetic-desktop-canary-amd64.iso ]; then
+  echo "Missing ./kinetic-desktop-canary-amd64.iso (symlink it in, please, and try again)."
+  exit 1
+fi
+
+if [ -z "${SIKULIX_JAR}" ]; then
+  echo "Missing 'SIKULIX_JAR' environment variable (point it at your sikulixide jar, please, and try again)."
+  exit 1
+fi 
+
+mkdir -p vm
+quickemu --vm kinetic.conf &
+
+clean() {
+  EXIT_CODE=$?
+
+  echo "Cleaning ./vm away."
+  rm -rf vm
+  exit $EXIT_CODE
+}
+trap clean EXIT
+
+java -jar $SIKULIX_JAR -r installer-automation.sikuli
+
