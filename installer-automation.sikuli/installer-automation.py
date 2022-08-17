@@ -1,31 +1,31 @@
 
 wait("1660741650330.png")
-assert("1660741900462.png")
+assert("ubuntu_safe_graphics.png")
 type(Key.DOWN)
 type(Key.ENTER)
 
-wait("jammy_jellyfish.png", 120)
-click("installer_panel_icon.png", 120)
-wait("install_ubuntu.png", 120)
+wait("jammy_jellyfish.png", 1200)
+click("installer_panel_icon.png", 1200)
+wait("install_ubuntu.png", 1200)
 click("continue.png")
-click("1660731892674.png")
+click("type_here.png")
 type('dogflap')
 click("continue.png")
 
-assert("1660731939958.png")
+assert("use_wired_connection.png")
 click("continue.png")
 
-assert("1660732028616.png")
-assert("1660732039674.png")
+assert("normal_installation.png")
+assert("minimal_installation.png")
 click("continue.png")
 
-assert("1660732095787.png")
+assert("erase_disk.png")
 click("continue.png")
 
-assert("1660732144223.png")
+assert("write_changes_to_disk.png")
 wait("1660739976913.png")
-click("1660732170754.png")
-assert("1660732191106.png")
+click("start_installing.png")
+assert("where_are_you.png")
 
 
 click("continue.png")
@@ -50,11 +50,11 @@ click("1660732681771.png")
 type("herptyderp")
 click("continue.png")
 
-wait("1660740046628.png")
-wait("1660733651423.png", 1800)
+wait("copying_files.png", 3200)
+wait("restart_into_ubuntu.png", 3200)
 
-click("1660733651423.png")
+click("restart_into_ubuntu.png")
 
-wait("1660733707126.png")
+wait("please_remoev_installation_medium.png")
 type(Key.ENTER)
 
