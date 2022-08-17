@@ -51,10 +51,10 @@ type("herptyderp")
 click("continue.png")
 
 wait("copying_files.png", 3200)
-wait("restart_into_ubuntu.png", 3200)
+wait("restart_into_ubuntu.png", 12800)
 
 click("restart_into_ubuntu.png")
 
-wait("please_remoev_installation_medium.png")
+wait("please_remove_installation_medium.png")
 type(Key.ENTER)
 
