@@ -21,16 +21,10 @@ mkdir -p vm
 sleep 1
 quickemu --vm kinetic.conf
 
-clean() {
-  EXIT_CODE=$?
-
-  echo "Cleaning ./vm away."
-  rm -rf vm
-  exit $EXIT_CODE
-}
-trap clean EXIT
-
 java -jar $SIKULIX_JAR -r installer-automation.sikuli
+SIKULI_EXIT = $?
 
 set +e +pipefail
 killall qemu-system-x86_64 || /bin/true
+
+exit $SIKULI_EXIT

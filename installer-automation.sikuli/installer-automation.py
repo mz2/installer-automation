@@ -1,7 +1,7 @@
 # findText("Try or install Ubuntu")
 wait("try_or_install_ubuntu.png", 1800)
 # assert "ubuntu_safe_graphics.png"
-# type(Key.DOWN)
+type(Key.DOWN)
 type(Key.ENTER)
 
 # wait("jammy_jellyfish.png", 1800)
